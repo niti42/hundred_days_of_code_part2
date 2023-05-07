@@ -31,6 +31,7 @@ def next_card():
     flip_timer = window.after(3000, func=flip_card)
 
 
+# --------------------------------- Saving Progress -----------------------#
 def flip_card():
     canvas.itemconfig(card_title, text="English", fill="white")
     canvas.itemconfig(card_word, text=current_card.get("English"), fill="white")
