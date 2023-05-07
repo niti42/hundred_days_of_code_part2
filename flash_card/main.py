@@ -6,7 +6,6 @@ from pprint import pprint
 BACKGROUND_COLOR = "#B1DDC6"
 LANGUAGE = "French"
 WORDS_DATA = "data/french_words.csv"
-FONT = "Ariel"
 
 data = pd.DataFrame()
 try:
