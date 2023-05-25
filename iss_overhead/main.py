@@ -10,8 +10,8 @@ MY_LONG = 77.68738593944845  # Your longitude
 # MY_LAT =36.9693  # Your latitude
 # MY_LONG = 85.5772  # Your longitude
 
-MY_EMAIL = "nithishkr62@gmail.com"
-PASSWORD = "dwwmhvinmqsrfiqr"
+MY_EMAIL = "myemail@abc.com"
+PASSWORD = "my_app_password"
 
 
 def haversine(lat1, lon1, lat2, lon2):
