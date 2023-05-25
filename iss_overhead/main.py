@@ -7,8 +7,11 @@ import time
 MY_LAT = 13.033490438035138  # Your latitude
 MY_LONG = 77.68738593944845  # Your longitude
 
+# MY_LAT =36.9693  # Your latitude
+# MY_LONG = 85.5772  # Your longitude
+
 MY_EMAIL = "nithishkr62@gmail.com"
-PASSWORD = "app_password_gmail"
+PASSWORD = "dwwmhvinmqsrfiqr"
 
 
 def haversine(lat1, lon1, lat2, lon2):
@@ -23,7 +26,9 @@ def is_iss_close_to_me(my_lat, my_long, iss_lat, iss_long):
     print(my_lat, my_long, iss_lat, iss_long)
     distance = haversine(my_lat, my_long, iss_lat, iss_long)
     print(distance)
-    return distance <= 5
+    # return distance <= 5
+    if (my_lat - 5) <= iss_lat <= (my_lat + 5) and (my_long - 5) <= iss_long <= (my_long + 5):
+        return True
 
 
 def is_dark(sunrise_time, sunset_time):
@@ -74,9 +79,9 @@ def get_sunrise_sunset_times(my_lat, my_long):
 
 if __name__ == "__main__":
     while True:
-        time.sleep(60)
+        time.sleep(5)
         sunrise, sunset = get_sunrise_sunset_times(MY_LAT, MY_LONG)
         iss_latitude, iss_longitude = get_iss_lat_long()
         if is_dark(sunrise, sunset) and is_iss_close_to_me(MY_LAT, MY_LONG, iss_latitude, iss_longitude):
-            send_email_alert()
+            # send_email_alert()
             print("email alert sent")
