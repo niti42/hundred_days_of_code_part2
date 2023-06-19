@@ -9,7 +9,7 @@ from datetime import datetime
 # Load environment variables from .env file
 load_dotenv()
 
-APP_ID = '15ca3619'
+APP_ID = os.getenv('APP_ID')
 NUTRITIONIX_API_KEY = os.getenv('NUTRITIONIX_API_KEY')
 
 GENDER = "male"
