@@ -11,7 +11,6 @@ load_dotenv()
 
 APP_ID = '15ca3619'
 NUTRITIONIX_API_KEY = os.getenv('NUTRITIONIX_API_KEY')
-print(NUTRITIONIX_API_KEY)
 
 GENDER = "male"
 WEIGHT_KG = 70
@@ -28,10 +27,8 @@ nutritionix_headers = {
 }
 
 sheety_headers = {
-    "Authorization": "Basic bml0aTUyNjpuaUB0ITdlZ0g1NzNkZmdoZXAhKg=="
+    "Authorization": os.getenv('SHEETY_AUTHORIZATION_BEARER')
 }
-
-sheety_auth = ('niti526', 'ni@t!7egH573dfghep!*')
 
 exercise_text = input("Tell me which exercises you did: ")
 parameters = {
@@ -61,8 +58,8 @@ for ex in result_nutri:
             }
 
     }
-    # response_sh = requests.post(url=workout_sheet, json=workout_log, headers=sheety_headers)
-    response_sh= requests.post(url=workout_sheet, json=workout_log,auth=sheety_auth)
+    response_sh = requests.post(url=workout_sheet, json=workout_log, headers=sheety_headers)
+    # response_sh= requests.post(url=workout_sheet, json=workout_log,auth=sheety_auth)
     pprint(response_sh.json())
     response_sh.raise_for_status()
 
